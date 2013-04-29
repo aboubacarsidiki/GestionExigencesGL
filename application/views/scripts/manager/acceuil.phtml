@@ -1,0 +1,62 @@
+<?php
+/**
+ * Default Layout
+ *
+ * @author
+ * @version
+ */
+
+echo '<?xml version="1.0" encoding="UTF-8" ?>';
+echo $this->doctype()
+?>
+
+<html>
+
+    <head>
+        <meta http-equiv="Content-Type" content="text/html;
+        charset=UTF-8" />
+        <link rel="stylesheet" type="text/css" href="<?php echo
+        $this->baseUrl();?>/styles/design.css" />
+        <?php
+        echo $this->headTitle();
+        echo $this->headScript();
+        echo $this->headStyle();
+        ?>
+    </head>
+
+    <body>
+         <div id="header">
+           <center><h1>Gestion des exigences</h1></center>
+            <ul id="nav">
+                <li><a href="http://www.lemonde.fr/">Nouvelles</a></li>
+                <li><a href="http://www.youtube.com/">Videos</a></li>
+                <li><a  href="http://www.esprit.ens.tn/test/v3/index.php?lang=fr">Esprit</a></li>
+                <li><a href="https://www.google.tn/">Google</a></li>
+            </ul>
+        </div>
+
+        <div id="container">
+         <center><?php echo$this->formulaireAuth;?></center><br>
+            <div id="content">
+            <center><embed src="public/video/Require Manager.mp4"></center>
+            <h1><?php echo $this->placeholder('title')
+            ?></h1>
+           
+            </div>
+           
+            
+      </div>
+        <div id="footer">
+            <p class="validate"><a href="http://validator.w3.org/check?uri=referer">XHTML</a>
+            |
+            <a href="http://jigsaw.w3.org/css-validator/">CSS</a>
+            | <a href="#content">Top</a></p>
+            <p><a href="www.lyrixx.info">© Pineau Gr&eacute;goire</a></p>
+            
+        </div>
+
+        <br />
+        <br />
+    </body>
+
+</html>

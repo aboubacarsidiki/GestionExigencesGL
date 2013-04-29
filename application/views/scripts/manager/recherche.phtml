@@ -1,0 +1,28 @@
+<?php 
+echo $this->formrecherche;
+
+if($this->formre){?>
+<center><table border="1">
+<tr bgcolor="#00ff00"> 
+<td> Nom </td>
+<td> Prenom </td>
+<td> Adresse </td>
+<td> Login </td>
+<td> Modifier </td>
+<td> supprimer </td>
+</tr>
+<?php
+foreach ($this->formre as $ligne):?>
+<tr> 
+<td> <?php echo  $this->escape($ligne->nom);?></td>
+<td> <?php echo $this->escape($ligne->prenom);?></td>
+<td> <?php echo $this->escape($ligne->adresse);?></td>
+<td> <?php echo $this->escape($ligne->login);?></td>
+<td> <a href="<?php echo $this->url(array('controller'=>'Manager','action'=>'edit','id'=>$ligne->id));?>">Modifier</a></td>
+<td> <a href="<?php echo $this->url(array('controller'=>'Manager','action'=>'delete','id'=>$ligne->id));?>">Supprimer</a></td>
+</tr>
+
+<?php endforeach;?>
+</table></center>
+<?php
+} ?>

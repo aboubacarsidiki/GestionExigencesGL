@@ -1,0 +1,26 @@
+
+<!DOCTYPE a PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head></head>
+<body>
+<h1>PAGE ADMINISTRATEUR</h1>
+<table border="1px">
+<tr> <td>
+
+<a href="<?php echo $this->url (
+
+								// notre controlleur est "Utilisateur" et notre action est "inscri"
+								array( 'controller'=>'Manager', 
+									   'action'=>'lst'))?>"> Gestion de managers</a>
+
+</td><td><a href="<?php echo $this->url (
+
+								// notre controlleur est "Utilisateur" et notre action est "inscri"
+								array( 'controller'=>'Collaborateur', 
+									   'action'=>'lst'))?>"> Gestion de collaborateurs</a></td> </tr>
+</table>
+
+<!-- Ajout du lien "s'inscrire" qui mène vers la page d'inscription  -->
+
+</body>
+</html>	

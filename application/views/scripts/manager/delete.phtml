@@ -1,0 +1,12 @@
+<!-- Dans cette vue on crée un formulaire de confirmation de suppression et qui renvoie à l'action 'delete'   -->
+
+<form action="<?php echo $this->url(array('action'=>'delete'));?>" method="post">
+<div>
+<!-- Le champs "hidden" est passé en paramètre caché pour recevoir l'id de l'utilisateur à 
+supprimer  -->
+<input type="hidden" name="id" value="<?php echo $this->users['id'];?>" />
+<input type="submit" name="del" value="YES" />
+<input type="submit" name="del" value="NO" />
+</div>
+
+</form>

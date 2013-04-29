@@ -1,0 +1,75 @@
+
+<!-- Nous créons un tableau qui va lister tous les utilisateurs -->
+<center><h1>Liste des exigences</h1>
+<table border="1px">
+	<tr bgcolor="#00ff00">
+		<td>Nom</td>
+		<td>Nom du collaborateur</td>
+		<td>Date debut</td>
+		<td>Date fin</td>
+		<td>Etat d'avancement</td>
+		<td>Priorite</td>
+		<td>Nom du projet</td>
+		<td>Supprimer</td>
+		<td>Modifier</td>
+	</tr>
+<?php
+ $at = new Application_Model_DbTable_Collaborateur();
+ $ut = new Application_Model_DbTable_Projet();
+//foreach permet de parcourir tous les enregistrement d'une base de données
+foreach ($this->users as $user):?>
+<tr>
+		<td> <?php
+		//"escape" est utilisée pour supprimer les espaces s'ils existent
+echo $this->escape($user->nom);
+?></td>
+		<td> <?php
+foreach ($at->fetchAll() as $user1):
+if($this->escape($user->id_collaborateur)==($user1->id))
+echo $user1->nom;
+endforeach;
+?></td>
+<td> <?php
+		//"escape" est utilisée pour supprimer les espaces s'ils existent
+echo $this->escape($user->date_debut);
+?></td>
+<td> <?php
+		//"escape" est utilisée pour supprimer les espaces s'ils existent
+echo $this->escape($user->date_fin);
+?></td>
+<td> <?php
+		//"escape" est utilisée pour supprimer les espaces s'ils existent
+echo $this->escape($user->etat_avance);
+?></td>
+<td> <?php
+		//"escape" est utilisée pour supprimer les espaces s'ils existent
+echo $this->escape($user->priorite);
+?></td>
+	<td> <?php
+foreach ($ut->fetchAll() as $user1):
+if($this->escape($user->id_projet)==($user1->id))
+echo $user1->nom;
+endforeach;
+?></td>
+<td> <a href="<?php echo $this->url(array('controller'=>'Exigence','action'=>'delete','id'=>$user->id));?>">Supprimer</a></td>
+<td> <a href="<?php echo $this->url(array('controller'=>'Exigence','action'=>'edit','id'=>$user->id));?>">Modifier</a></td>
+	</tr>
+
+	<?php endforeach; ?>
+
+</table>
+<a href="<?php echo $this->url (
+
+								// notre controlleur est "Utilisateur" et notre action est "inscri"
+								array( 'controller'=>'Exigence', 
+									   'action'=>'inscription'))?>"> Ajouter</a>
+<a href="<?php echo $this->url (
+
+								// notre controlleur est "Utilisateur" et notre action est "inscri"
+								array( 'controller'=>'Exigence', 
+									   'action'=>'recherche'))?>"> Rechercher</a></center>
+		
+
+
+
+

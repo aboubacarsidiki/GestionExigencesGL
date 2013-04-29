@@ -1,0 +1,53 @@
+<?php
+?>
+
+<!-- Nous créons un tableau qui va lister tous les utilisateurs -->
+<center><h1>Liste des collaborateurs</h1>
+<table border="1px">
+	<tr bgcolor="#00ff00">
+		<td>Nom</td>
+		<td>Prenom</td>
+		<td>Adresse</td>
+		<td>Login</td>
+		<td>Mot de passe</td>
+		<td>Modifier</td>
+		<td>Supprimer</td>
+	</tr>
+<?php
+//foreach permet de parcourir tous les enregistrement d'une base de données
+foreach ($this->users as $user):?>
+<tr>
+		<td> <?php
+		//"escape" est utilisée pour supprimer les espaces s'ils existent
+echo $this->escape($user->nom);
+?></td>
+		<td> <?php
+echo $this->escape($user->prenom);
+?></td>
+		<td> <?php
+echo $this->escape($user->adresse);
+?></td>
+		<td> <?php
+echo $this->escape($user->login);
+?></td>
+		<td> <?php
+echo $this->escape($user->password);
+?></td>
+
+<!-- les 2 cellules qui suivent sont là pour afficher à l'utilisateur la possibilité de modifier ou de supprimer un enregistrement  -->
+<td> <a href="<?php echo $this->url(array('controller'=>'Collaborateur','action'=>'edit','id'=>$user->id));?>">Modifier</a></td>
+<td> <a href="<?php echo $this->url(array('controller'=>'Collaborateur','action'=>'delete','id'=>$user->id));?>">Supprimer</a></td>
+	</tr>
+	<?php endforeach; ?>
+
+</table>
+<a href="<?php echo $this->url (
+
+								// notre controlleur est "Utilisateur" et notre action est "inscri"
+								array( 'controller'=>'Collaborateur', 
+									   'action'=>'inscription'))?>"> Ajouter</a>
+<a href="<?php echo $this->url (
+
+								// notre controlleur est "Utilisateur" et notre action est "inscri"
+								array( 'controller'=>'Collaborateur', 
+									   'action'=>'recherche'))?>"> Rechercher</a></center>
