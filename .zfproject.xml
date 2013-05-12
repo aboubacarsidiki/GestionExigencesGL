@@ -45,24 +45,4 @@
     <libraryDirectory>
       <zfStandardLibraryDirectory enabled="false"/>
     </libraryDirectory>
-    <publicDirectory>
-      <publicStylesheetsDirectory enabled="false"/>
-      <publicScriptsDirectory enabled="false"/>
-      <publicImagesDirectory enabled="false"/>
-      <publicIndexFile filesystemName="index.php"/>
-      <htaccessFile filesystemName=".htaccess"/>
-    </publicDirectory>
-    <projectProvidersDirectory enabled="false"/>
-    <temporaryDirectory enabled="false"/>
-    <testsDirectory>
-      <testPHPUnitConfigFile filesystemName="phpunit.xml"/>
-      <testPHPUnitBootstrapFile filesystemName="bootstrap.php"/>
-      <testApplicationDirectory>
-        <testApplicationControllerDirectory>
-          <testApplicationControllerFile forControllerName="Index"/>
-        </testApplicationControllerDirectory>
-      </testApplicationDirectory>
-      <testLibraryDirectory/>
-    </testsDirectory>
-  </projectDirectory>
-</projectProfile>
+   
