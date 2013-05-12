@@ -2,14 +2,14 @@
 class Application_Form_Projet extends Zend_Form
 {
 	// la fonction "init" permet d'initialiser un formulaire avec tous 
-	//ses éléments(text,radio,button,submit,select,etc..) 
+	//ses ï¿½lï¿½ments(text,radio,button,submit,select,etc..)  carine
     public function init ()
     {
         $ut = new Application_Model_DbTable_Manager();
     	$this->setName("FormulaireProjet");
          
-        $id= new Zend_Form_Element_Hidden("id");/*on utilise un élément "id" caché pour passer sa valeur 
-        en paramètre lors de la modification ou la suppression d'un utilisateur */
+        $id= new Zend_Form_Element_Hidden("id");/*on utilise un ï¿½lï¿½ment "id" cachï¿½ pour passer sa valeur 
+        en paramï¿½tre lors de la modification ou la suppression d'un utilisateur */
         $nom = new Zend_Form_Element_Text("nom");
         $nom->setLabel("Nom :");
         $nom->setRequired();
