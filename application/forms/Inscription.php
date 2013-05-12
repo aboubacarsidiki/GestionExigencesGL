@@ -1,14 +1,14 @@
 <?php
 class Application_Form_Inscription extends Zend_Form
 {
-	// la fonction "init" permet d'initialiser un formulaire avec tous 
-	//ses éléments(text,radio,button,submit,select,etc..) 
+	// la fonction "init" permet d'initialiser un formulaire avec tous  carine 
+	//ses ï¿½lï¿½ments(text,radio,button,submit,select,etc..) 
     public function init ()
     {
         $this->setName("FormulaireInscription");
          
-        $id= new Zend_Form_Element_Hidden("id");/*on utilise un élément "id" caché pour passer sa valeur 
-        en paramètre lors de la modification ou la suppression d'un utilisateur */
+        $id= new Zend_Form_Element_Hidden("id");/*on utilise un ï¿½lï¿½ment "id" cachï¿½ pour passer sa valeur 
+        en paramï¿½tre lors de la modification ou la suppression d'un utilisateur */
         $nom = new Zend_Form_Element_Text("nom");
         $nom->setLabel("Nom :");
         $nom->setRequired();
